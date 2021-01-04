@@ -69,11 +69,11 @@ public class MainActivity extends AppCompatActivity {
 
                 progressDialog.dismiss();
 
-             //  Toast.makeText(MainActivity.this, httpResponseMsg, Toast.LENGTH_SHORT).show();
+          //    Toast.makeText(MainActivity.this, httpResponseMsg, Toast.LENGTH_SHORT).show();
 
-                if(httpResponseMsg.contains("ret")){
+                if(httpResponseMsg.contains("ID")){
                     try {
-                        Toast.makeText(MainActivity.this, "hiiii", Toast.LENGTH_SHORT).show();
+                       // Toast.makeText(MainActivity.this, "hiiii", Toast.LENGTH_SHORT).show();
                         Intent intent=new Intent(MainActivity.this,Subactivity.class);
                        startActivity(intent);
                         JSONObject jsonObject = new JSONObject(httpResponseMsg);
@@ -106,8 +106,8 @@ public class MainActivity extends AppCompatActivity {
                     JSONObject jsonObject = null;
                     try {
                         jsonObject = new JSONObject(httpResponseMsg);
-                        String messege = jsonObject.getString("msg");
-                      //  Toast.makeText(MainActivity.this, messege, Toast.LENGTH_SHORT).show();
+                        String messege = jsonObject.getString("ret");
+                          Toast.makeText(MainActivity.this, messege, Toast.LENGTH_SHORT).show();
 
 
                     } catch (JSONException e) {
