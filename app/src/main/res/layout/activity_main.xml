@@ -39,7 +39,6 @@
         android:layout_gravity="center_horizontal"
         android:textColor="#000"
          android:hint="memberemail"
-        android:paddingLeft="9dp"
        />
     <TextView
         android:layout_marginTop="20dp"
@@ -55,14 +54,11 @@
 
     <EditText
         android:layout_marginTop="20dp"
-       
         android:id="@+id/passwordcontainer"
         android:layout_width="334dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:hint="memberpassword"
-        android:textColor="#000"
-        android:paddingLeft="9dp"
        />
 
     <Button

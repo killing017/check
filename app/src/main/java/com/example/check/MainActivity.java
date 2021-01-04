@@ -42,11 +42,12 @@ public class MainActivity extends AppCompatActivity {
         email=findViewById(R.id.emailcontainer);
         password=findViewById(R.id.passwordcontainer);
         signin=findViewById(R.id.loginbtn);
-stremail=email.getText().toString().trim();
-strpassword=password.getText().toString().trim();
+
     }
 
     public void onClickSignInBtn(View view) {
+        stremail=email.getText().toString().trim();
+        strpassword=password.getText().toString().trim();
         UserLoginFunction("login",stremail,strpassword);
     }
     public void UserLoginFunction(final String act,final String username, final String password){
@@ -68,12 +69,15 @@ strpassword=password.getText().toString().trim();
 
                 progressDialog.dismiss();
 
-                Toast.makeText(MainActivity.this, httpResponseMsg, Toast.LENGTH_SHORT).show();
+             //  Toast.makeText(MainActivity.this, httpResponseMsg, Toast.LENGTH_SHORT).show();
 
-                if(httpResponseMsg.contains("retur")){
+                if(httpResponseMsg.contains("ret")){
                     try {
+                        Toast.makeText(MainActivity.this, "hiiii", Toast.LENGTH_SHORT).show();
+                        Intent intent=new Intent(MainActivity.this,Subactivity.class);
+                       startActivity(intent);
                         JSONObject jsonObject = new JSONObject(httpResponseMsg);
-                        JSONArray result = jsonObject.getJSONArray("ret");
+                        JSONArray result = jsonObject.getJSONArray("{");
                         for (int i=0; i<result.length(); i++ ){
                             JSONObject ob=result.getJSONObject(i);
                             Toast.makeText(MainActivity.this, ""+ob, Toast.LENGTH_SHORT).show();
